@@ -25,13 +25,13 @@
 
 <script>
 export default {
-  name: "Calculator",
+  name: 'Calculator',
   data() {
     return {
       previous: null,
-      current: "",
+      current: '',
       operator: null,
-      operatorClicked: false
+      operatorClicked: false,
     };
   },
   methods: {
@@ -39,8 +39,8 @@ export default {
       this.current = '';
     },
     sign() {
-      this.current = this.current.charAt(0) === '-' ?
-        this.current.slice(1) : `-${this.current}`;
+      this.current = this.current.charAt(0) === '-'
+        ? this.current.slice(1) : `-${this.current}`;
     },
     percent() {
       this.current = `${parseFloat(this.current) / 100}`;
@@ -80,11 +80,11 @@ export default {
     equal() {
       this.current = `${this.operator(
         parseFloat(this.current),
-        parseFloat(this.previous)
+        parseFloat(this.previous),
       )}`;
       this.previous = null;
-    }
-  }
+    },
+  },
 };
 </script>
 
